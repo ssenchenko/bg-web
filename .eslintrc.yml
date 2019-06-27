@@ -1,0 +1,19 @@
+parser: '@typescript-eslint/parser'
+plugins:
+  - '@typescript-eslint'
+extends:
+  - react-app
+  - plugin:@typescript-eslint/recommended
+env:
+  jest: true
+rules:
+  react-hooks/rules-of-hooks:
+    - error
+  react-hooks/exhaustive-deps:
+    - warn
+  '@typescript-eslint/indent':
+    - off
+  '@typescript-eslint/explicit-function-return-type':
+    - off
+  '@typescript-eslint/prefer-interface':
+    - warn
