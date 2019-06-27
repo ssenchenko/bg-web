@@ -15,6 +15,10 @@ eslint-full.json
 .idea
 *.iml
 gen
+
+# vscode
+.vscode
+
 ### macOS template
 # General
 .DS_Store
