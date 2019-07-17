@@ -15,5 +15,7 @@ rules:
     - off
   '@typescript-eslint/explicit-function-return-type':
     - off
+  '@typescript-eslint/member-delimiter-style':
+    - off
   '@typescript-eslint/prefer-interface':
-    - warn
+    - off
