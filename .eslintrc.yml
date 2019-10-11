@@ -1,21 +1,169 @@
-parser: '@typescript-eslint/parser'
-plugins:
-  - '@typescript-eslint'
 extends:
   - react-app
-  - plugin:@typescript-eslint/recommended
+  - eslint:recommended
+  - plugin:react/recommended
+  - plugin:jsx-a11y/recommended
+  - plugin:prettier/recommended
+  - prettier/react
 env:
   jest: true
+settings:
+  import/resolver:
+    node:
+      extensions:
+        - ".js"
+        - ".jsx"
+        - ".mjs"
+        - ".json"
+      paths:
+        - src
 rules:
-  react-hooks/rules-of-hooks:
+  # ================== Possible Errors ==================
+  no-await-in-loop: warn
+  no-console: warn
+  no-template-curly-in-string: warn
+  # ================== Best Practices ==================
+  array-callback-return: error
+  block-scoped-var: error
+  class-methods-use-this:
     - error
-  react-hooks/exhaustive-deps:
+    - exceptMethods: []
+  consistent-return: error
+  default-case: warn
+  dot-notation: error
+  eqeqeq:
+    - error
+    - smart
+  guard-for-in: error
+  no-alert: warn
+  no-caller: error
+  no-div-regex: warn
+  no-else-return: warn
+  no-empty-function:
     - warn
-  '@typescript-eslint/indent':
-    - off
-  '@typescript-eslint/explicit-function-return-type':
-    - off
-  '@typescript-eslint/member-delimiter-style':
-    - off
-  '@typescript-eslint/prefer-interface':
-    - off
+    - allow:
+        - arrowFunctions
+  no-eval: error
+  no-extra-bind: error
+  no-extra-label: error
+  no-floating-decimal: error
+  no-implicit-coercion: error
+  no-implicit-globals: warn
+  no-implied-eval: error
+  no-loop-func: error
+  no-multi-str: warn
+  no-new: warn
+  no-new-func: warn
+  no-new-wrappers: error
+  no-octal-escape: warn
+  no-proto: warn
+  no-return-assign: error
+  no-return-await: error
+  no-self-compare: error
+  no-sequences: error
+  no-unmodified-loop-condition: warn
+  no-unused-expressions: warn
+  no-useless-call: warn
+  no-useless-concat: warn
+  no-useless-return: error
+  prefer-promise-reject-errors: warn
+  radix:
+    - warn
+    - as-needed
+  require-await: error
+  vars-on-top: error
+  wrap-iife:
+    - error
+    - inside
+    - functionPrototypeMethods: true
+  # ================== Variables ==================
+  no-label-var: error
+  no-shadow:
+    - warn
+    - hoist: functions
+  no-undef-init: error
+  no-use-before-define: error
+  # ================== Node ==================
+  callback-return: error
+  handle-callback-err: error
+  no-buffer-constructor: error
+  no-path-concat: error
+  no-process-exit: warn
+  no-sync: warn
+  # ================== Style ==================
+  consistent-this:
+    - error
+    - that
+  new-parens: error
+  no-array-constructor: error
+  no-bitwise: warn
+  no-lonely-if: warn
+  no-mixed-operators: warn
+  no-nested-ternary: error
+  no-new-object: error
+  no-unneeded-ternary: error
+  prefer-object-spread: warn
+  # ================== ES6 ==================
+  no-duplicate-imports: warn
+  no-useless-computed-key: error
+  no-useless-constructor: warn
+  no-useless-rename: error
+  no-var: error
+  object-shorthand:
+    - error
+    - always
+    - avoidQuotes: true
+      avoidExplicitReturnArrows: true
+  prefer-arrow-callback: error
+  prefer-const: error
+  prefer-destructuring:
+    - warn
+    - object: true
+  prefer-numeric-literals: error
+  prefer-rest-params: warn
+  prefer-spread: warn
+  prefer-template: error
+  symbol-description: warn
+  # ================== Import ==================
+  import/no-unresolved: error
+  import/named: error
+  import/no-self-import: error
+  import/namespace: error
+  import/no-cycle: error
+  import/no-useless-path-segments: error
+  import/export: error
+  import/no-named-as-default: error
+  import/no-named-as-default-member: error
+  import/no-deprecated: error
+  import/no-extraneous-dependencies:
+    - error
+    - devDependencies:
+        - "test/**" # tape, common npm pattern
+        - "tests/**" # also common npm pattern
+        - "**/__tests__/**" # jest pattern
+        - "**/__mocks__/**" # jest pattern
+        - "test.{js,jsx}" # repos with a single test file
+        - "test-*.{js,jsx}" # repos with multiple top-level test files
+        - "**/*{.,_}{test,spec}.{js,jsx}" # tests where the extension or filename suffix denotes that it is a test
+        - "**/jest.config.js" # jest config
+        - "**/jest.setup.js" # jest setup
+        - "**/webpack.config.js" # webpack config
+        - "**/webpack.config.*.js" # webpack config
+        - "**/gulpfile.js" # gulp config
+        - "**/gulpfile.*.js" # gulp config
+      optionalDependencies: false
+  import/no-mutable-exports: error
+  import/prefer-default-export: warn
+  import/no-unassigned-import: warn
+  # ================== React ==================
+  react/destructuring-assignment:
+    - error
+    - always
+  # ================== React Hooks ==================
+  react-hooks/rules-of-hooks: error
+  react-hooks/exhaustive-deps: warn
+  # ================== Typescript ===================
+  "@typescript-eslint/indent": off
+  "@typescript-eslint/explicit-function-return-type": off
+  "@typescript-eslint/member-delimiter-style": off
+  "@typescript-eslint/prefer-interface": off
