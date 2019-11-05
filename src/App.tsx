@@ -1,19 +1,21 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import React from 'react';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { ThemeProvider } from '@material-ui/styles';
+import theme from 'settings';
+import { Switch, Route } from 'react-router';
+import LandingScreen from 'screens/landing';
 
 const App: React.FC = () => (
-  <div className="App">
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>
-        Edit <code>src/App.tsx</code> and save to reload.
-      </p>
-      <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-        Learn React
-      </a>
-    </header>
-  </div>
+  <>
+    <CssBaseline />
+    <ThemeProvider theme={theme}>
+      <Switch>
+        <Route path="/">
+          <LandingScreen />
+        </Route>
+      </Switch>
+    </ThemeProvider>
+  </>
 );
 
 export default App;
