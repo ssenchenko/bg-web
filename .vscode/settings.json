@@ -3,12 +3,14 @@
   "editor.fontSize": 13,
   "editor.formatOnSave": true,
   "editor.minimap.enabled": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
   "eslint.options": {
     "configFile": ".eslintrc.yml"
   },
   "eslint.packageManager": "yarn",
   "eslint.nodePath": "node_modules",
-  "eslint.autoFixOnSave": true,
   "prettier.endOfLine": "lf",
   "jest.pathToJest": "yarn test",
   "cSpell.words": [

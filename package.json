@@ -5,19 +5,21 @@
   "dependencies": {
     "@material-ui/core": "^4.5.0",
     "@testing-library/react": "^9.3.0",
-    "@types/jest": "24.0.13",
-    "@types/node": "12.0.2",
-    "@types/react": "16.8.17",
-    "@types/react-dom": "16.8.4",
+    "@types/jest": "24.9.0",
+    "@types/node": "13.1.8",
+    "@types/react": "16.9.17",
+    "@types/react-dom": "16.9.5",
     "@types/react-router-dom": "^5.1.2",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.2.0",
+    "react-scripts": "3.3.0",
     "react-test-renderer": "^16.10.2",
-    "typescript": "3.6"
+    "ts-jest": "^24.3.0",
+    "typescript": "3.7.5"
   },
   "scripts": {
+    "firefox": "BROWSER='Firefox Developer Edition' react-scripts start",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -37,7 +39,6 @@
   },
   "devDependencies": {
     "eslint-config-prettier": "^6.0.0",
-    "eslint-plugin-prettier": "^3.1.0",
     "prettier": "^1.18.2"
   }
 }

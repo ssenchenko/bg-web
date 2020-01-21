@@ -3,8 +3,8 @@ extends:
   - eslint:recommended
   - plugin:react/recommended
   - plugin:jsx-a11y/recommended
-  - plugin:prettier/recommended
-  - prettier/react
+  - prettier
+  - "prettier/@typescript-eslint"
 env:
   jest: true
 settings:
@@ -15,6 +15,8 @@ settings:
         - ".jsx"
         - ".mjs"
         - ".json"
+        - ".ts"
+        - ".tsx"
       paths:
         - src
 rules:
@@ -27,7 +29,7 @@ rules:
   block-scoped-var: error
   class-methods-use-this:
     - error
-    - exceptMethods: []
+    - exceptMethods: ["render"]
   consistent-return: error
   default-case: warn
   dot-notation: error

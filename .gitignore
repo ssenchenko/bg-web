@@ -7,8 +7,6 @@
 .env.test.local
 .env.production.local
 
-eslint-full.json
-
 ### Example user template
 
 # IntelliJ project files
