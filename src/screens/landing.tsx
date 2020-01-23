@@ -1,31 +1,24 @@
 import React from "react";
-import { Container, Typography, Box } from "@material-ui/core";
+import { Container, Box } from "@material-ui/core";
 import { styled, useTheme } from "@material-ui/core/styles";
+import LandingHeader from "components/header";
 
-type PageLayoutProps = {
-  children: React.ReactNode;
-};
-
-const PageLayout: React.FC<PageLayoutProps> = ({ children }: PageLayoutProps) => {
+const LandingScreen: React.FC = () => {
   const theme = useTheme();
 
-  const StyledBox = styled(Box)({
+  const PageLayout = styled(Box)({
     display: "flex",
     flexDirection: "column-reverse",
-    [theme.breakpoints.up("md")]: {
+    [theme.breakpoints.up("sm")]: {
       flexDirection: "column",
     },
   });
 
-  return <StyledBox>{children}</StyledBox>;
-};
-
-const LandingScreen: React.FC = () => {
   return (
     <>
       <Container maxWidth="lg">
         <PageLayout>
-          <Typography>Hello</Typography>
+          <LandingHeader />
         </PageLayout>
       </Container>
     </>
