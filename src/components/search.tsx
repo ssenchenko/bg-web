@@ -1,64 +1,53 @@
 import React from "react";
-import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
-import { InputBase, fade } from "@material-ui/core";
+import { styled } from "@material-ui/core/styles";
+import { InputBase, Box } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
-
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    search: {
-      position: "relative",
-      borderRadius: theme.shape.borderRadius,
-      backgroundColor: fade(theme.palette.common.white, 0.15),
-      "&:hover": {
-        backgroundColor: fade(theme.palette.common.white, 0.25),
-      },
-      marginRight: theme.spacing(2),
-      marginLeft: 0,
-      width: "100%",
-      [theme.breakpoints.up("sm")]: {
-        marginLeft: theme.spacing(3),
-        width: "auto",
-      },
-    },
-    searchIcon: {
-      width: theme.spacing(7),
-      height: "100%",
-      position: "absolute",
-      pointerEvents: "none",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-    },
-    inputRoot: {
-      color: "inherit",
-    },
-    inputInput: {
-      padding: theme.spacing(1, 1, 1, 7),
-      transition: theme.transitions.create("width"),
-      width: "100%",
-      [theme.breakpoints.up("md")]: {
-        width: 200,
-      },
-    },
-  }),
-);
+import { ThemedProps } from "../settings";
 
 const SearchField: React.FC = () => {
-  const classes = useStyles();
+  const SearchWrapper = styled(Box)(({ theme }: ThemedProps<{}>) => ({
+    position: "relative",
+    borderRadius: theme.shape.borderRadius,
+    backgroundColor: theme.palette.background.default,
+    "&:hover": {
+      backgroundColor: theme.palette.background.paper,
+    },
+    marginRight: theme.spacing(2),
+    marginLeft: 0,
+    width: "auto",
+    [theme.breakpoints.up("sm")]: {
+      marginLeft: theme.spacing(3), // to separate from logo
+    },
+  }));
+
+  const SearchIconWrapper = styled(Box)(({ theme }: ThemedProps<{}>) => ({
+    width: theme.spacing(7),
+    height: "100%",
+    position: "absolute",
+    pointerEvents: "none",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  }));
+
+  const InputStyled = styled(InputBase)(({ theme }: ThemedProps<{}>) => ({
+    "&> input": {
+      padding: theme.spacing(1, 1, 1, 7),
+      transition: theme.transitions.create("width"),
+      width: theme.spacing(19),
+      [theme.breakpoints.up("md")]: {
+        width: theme.spacing(38),
+      },
+    },
+  }));
+
   return (
-    <div className={classes.search}>
-      <div className={classes.searchIcon}>
+    <SearchWrapper>
+      <SearchIconWrapper>
         <SearchIcon />
-      </div>
-      <InputBase
-        placeholder="Where?"
-        classes={{
-          root: classes.inputRoot,
-          input: classes.inputInput,
-        }}
-        inputProps={{ "aria-label": "where" }}
-      />
-    </div>
+      </SearchIconWrapper>
+      <InputStyled placeholder="Where?" inputProps={{ "aria-label": "where" }} />
+    </SearchWrapper>
   );
 };
 
