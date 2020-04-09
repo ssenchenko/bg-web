@@ -26,4 +26,12 @@ export type ThemedProps<T> = T & {
   theme: Theme;
 };
 
+//export type TRoute = Record<string, string>;
+
+export const ROUTES = {
+  Landing: "/",
+  Admin: "/admin/",
+  Login: "/login/",
+};
+
 export default theme;
