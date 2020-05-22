@@ -1,0 +1,37 @@
+{
+  "editor.tabSize": 2,
+  "editor.fontSize": 13,
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.options": {
+    "configFile": ".eslintrc.yml"
+  },
+  "eslint.packageManager": "yarn",
+  "eslint.nodePath": "node_modules",
+  "prettier.endOfLine": "lf",
+  "jest.pathToJest": "yarn test",
+  "cSpell.words": [
+    "browserslist",
+    "concat",
+    "deps",
+    "eqeqeq",
+    "eval",
+    "fstart",
+    "gulpfile",
+    "homescreen",
+    "iife",
+    "parens",
+    "proto",
+    "repos",
+    "rerender",
+    "signin",
+    "signup",
+    "strs",
+    "testid",
+    "unmount",
+    "webfonts"
+  ]
+}

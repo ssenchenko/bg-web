@@ -7,8 +7,6 @@
 .env.test.local
 .env.production.local
 
-eslint-full.json
-
 ### Example user template
 
 # IntelliJ project files
@@ -16,7 +14,7 @@ eslint-full.json
 gen
 
 # vscode
-.vscode
+# .vscode
 
 ### macOS template
 # General
