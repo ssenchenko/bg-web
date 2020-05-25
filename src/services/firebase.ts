@@ -20,7 +20,7 @@ const firebaseTestConfig = {
   appId: process.env.REACT_APP_TEST_APP_ID,
 };
 
-const config = process.env.NODE_ENV == "production" ? firebaseConfig : firebaseTestConfig;
+const config = process.env.NODE_ENV === "production" ? firebaseConfig : firebaseTestConfig;
 
 firebase.initializeApp(config);
 
