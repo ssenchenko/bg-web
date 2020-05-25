@@ -3,21 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^4.5.0",
+    "@material-ui/core": "^4.10.0",
     "@material-ui/icons": "^4.5.1",
-    "@testing-library/react": "^9.3.0",
-    "@types/jest": "24.9.0",
-    "@types/node": "13.1.8",
-    "@types/react": "16.9.17",
-    "@types/react-dom": "16.9.5",
-    "@types/react-router-dom": "^5.1.2",
+    "@testing-library/react": "^10.0.4",
+    "@types/jest": "25.2.3",
+    "@types/node": "14.0.5",
+    "@types/react": "16.9.35",
+    "@types/react-dom": "16.9.8",
+    "@types/react-router-dom": "^5.1.5",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "3.3.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.1",
     "react-test-renderer": "^16.10.2",
-    "ts-jest": "^24.3.0",
-    "typescript": "3.7.5"
+    "ts-jest": "^26.0.0",
+    "typescript": "3.9.3"
   },
   "scripts": {
     "firefox": "BROWSER='Firefox Developer Edition' react-scripts start",
@@ -39,7 +39,7 @@
     ]
   },
   "devDependencies": {
-    "eslint-config-prettier": "^6.0.0",
-    "prettier": "^1.18.2"
+    "eslint-config-prettier": "^6.11.0",
+    "prettier": "^2.0.5"
   }
 }
