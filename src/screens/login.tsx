@@ -1,15 +1,7 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  Redirect,
-  useHistory,
-  useLocation,
-} from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import auth from "services/auth";
-import { ROUTES } from "settings";
+import { Routes } from "routes";
 
 const LoginScreen: React.FC = () => {
   // TODO: extend as I understand what's should be here
@@ -25,7 +17,7 @@ const LoginScreen: React.FC = () => {
 
   const initialLocation: IMinimalLocation = {
     from: {
-      pathname: ROUTES.Landing,
+      pathname: Routes.Landing,
     },
   };
   const { from } = location.state || initialLocation;

@@ -2,8 +2,17 @@ import React, { ReactNode } from "react";
 import { Route, Redirect } from "react-router-dom";
 import auth from "services/auth";
 
+export enum Routes {
+  Landing = "/",
+  Login = "/login/",
+}
+
+export enum ProtectedRoutes {
+  Cms = "/cms/",
+}
+
 // screen if you're not yet authenticated.
-const PrivateRoute: React.FC<{ children: ReactNode; rest: any[] }> = ({ children, ...rest }) => {
+const ProtectedRoute: React.FC<{ children: ReactNode; rest: any[] }> = ({ children, ...rest }) => {
   return (
     <Route
       {...rest}
@@ -23,4 +32,4 @@ const PrivateRoute: React.FC<{ children: ReactNode; rest: any[] }> = ({ children
   );
 };
 
-export default PrivateRoute;
+export default ProtectedRoute;

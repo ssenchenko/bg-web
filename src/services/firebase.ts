@@ -22,6 +22,6 @@ const firebaseTestConfig = {
 
 const config = process.env.NODE_ENV === "production" ? firebaseConfig : firebaseTestConfig;
 
-firebase.initializeApp(config);
+if (!firebase.apps.length) firebase.initializeApp(config);
 
 export default firebase;
