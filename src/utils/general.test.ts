@@ -1,4 +1,4 @@
-import toTitle from "./general";
+import { toTitle } from "./general";
 
 describe("toTitle() function", () => {
   it("makes the first letter in the string upper case", () => {
