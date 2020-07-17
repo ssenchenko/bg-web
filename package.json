@@ -22,7 +22,7 @@
     "typescript": "3.9.3"
   },
   "scripts": {
-    "firefox": "BROWSER='Firefox Developer Edition' react-scripts start",
+    "firefox": "BROWSER='firefox.exe' react-scripts start",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

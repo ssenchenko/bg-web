@@ -2,6 +2,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import { ThemeProvider } from "@material-ui/core/styles";
 import React from "react";
 import { Route, Switch } from "react-router-dom";
+import { useUser } from "contexts/auth";
 import { PageSpinner } from "components/centered-spinner";
 import theme from "settings";
 import { Routes, ProtectedRoutes } from "routes";
@@ -48,14 +49,14 @@ const UnauthorizedApp: React.FC = () => (
 );
 
 const App: React.FC = () => {
-  const user = 1;
+  const user = useUser();
   return (
     <>
       <CssBaseline />
       <ThemeProvider theme={theme}>
         <React.Suspense fallback={<PageSpinner />}>
           {user ? <AuthorizedApp /> : <UnauthorizedApp />}
-        </React.Suspense>{" "}
+        </React.Suspense>
       </ThemeProvider>
     </>
   );
