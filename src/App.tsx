@@ -4,7 +4,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import { useUser } from "contexts/auth";
 import { PageSpinner } from "components/centered-spinner";
-import theme from "settings";
+import theme from "theme";
 import { Routes, ProtectedRoutes } from "routes";
 
 const LandingScreen = React.lazy(() => import("screens/landing"));

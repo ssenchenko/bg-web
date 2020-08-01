@@ -2,7 +2,7 @@ import React from "react";
 import { styled } from "@material-ui/core/styles";
 import { InputBase, Box } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
-import { ThemedProps } from "../settings";
+import { ThemedProps } from "../theme";
 
 const SearchField: React.FC = () => {
   const SearchWrapper = styled(Box)(({ theme }: ThemedProps<{}>) => ({

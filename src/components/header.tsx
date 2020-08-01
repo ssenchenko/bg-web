@@ -2,7 +2,7 @@ import React from "react";
 import { AppBar, Toolbar, Button, Box, Container } from "@material-ui/core";
 import { styled } from "@material-ui/core/styles";
 import SearchField from "./search";
-import { ThemedProps } from "../settings";
+import { ThemedProps } from "../theme";
 
 const LandingHeader: React.FC = () => {
   const GrowingFiller = styled(Box)({
@@ -25,21 +25,28 @@ const LandingHeader: React.FC = () => {
     },
   }));
 
+  const MostImportantButton = styled(Button)(({ theme }: ThemedProps<{}>) => ({
+    color: theme.palette.primary.dark,
+    fontWeight: "bold",
+  }));
+
+  // const ImportantButton =
+
   return (
     <AppBar>
       <TwoRowContainer maxWidth="lg">
-        <Toolbar>
+        <Toolbar variant="dense">
           <SearchField />
           <GrowingFiller />
-          <Button>Become a host</Button>
-          <Button>Sign Up</Button>
-          <Button>Log In</Button>
+          <Button variant="outlined">Become a host</Button>
+          <Button variant="outlined">Sign Up</Button>
+          <Button variant="outlined">Log In</Button>
         </Toolbar>
-        <Toolbar>
+        <Toolbar variant="dense">
           <SearchButtonsContainer>
-            <Button>When</Button>
-            <Button>Guests</Button>
-            <Button>Price</Button>
+            <MostImportantButton variant="contained">When</MostImportantButton>
+            <MostImportantButton variant="contained">Guests</MostImportantButton>
+            <MostImportantButton variant="contained">Price</MostImportantButton>
           </SearchButtonsContainer>
           <GrowingFiller />
           <Button>How does it work?</Button>
