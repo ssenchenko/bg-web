@@ -1,57 +1,63 @@
 import React from "react";
 import { AppBar, Toolbar, Button, Box, Container } from "@material-ui/core";
 import { styled } from "@material-ui/core/styles";
-import SearchField from "./search";
-import { ThemedProps } from "../theme";
+import Search from "./search";
+import { ButtonImportantOutlined } from "./buttons";
+import { ThemedProps } from "theme";
 
 const LandingHeader: React.FC = () => {
   const GrowingFiller = styled(Box)({
     flexGrow: 1,
   });
 
-  const TwoRowContainer = styled(Container)({
-    flexDirection: "row",
-  });
+  const RightControls: React.FC = () => {
+    const Wrapper = styled(Box)(({ theme }: ThemedProps<{}>) => ({
+      display: "flex",
+      flexDirection: "column",
+      flexWrap: "nowrap",
+      justifyContent: "space-evenly",
+      alignItems: "stretch",
+    }));
 
-  const SearchButtonsContainer = styled(Box)(({ theme }: ThemedProps<{}>) => ({
-    display: "flex",
-    justifyContent: "space-between",
-    marginRight: theme.spacing(2),
-    marginLeft: 0,
-    width: theme.spacing(19 + 8),
-    [theme.breakpoints.up("md")]: {
-      marginLeft: theme.spacing(3),
-      width: theme.spacing(38 + 8),
-    },
-  }));
+    const UpperRow = styled(Box)(({ theme }: ThemedProps<{}>) => ({
+      paddingTop: theme.spacing(1),
+      paddingBottom: theme.spacing(1),
+      display: "flex",
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "space-around",
+    }));
 
-  const MostImportantButton = styled(Button)(({ theme }: ThemedProps<{}>) => ({
-    color: theme.palette.primary.dark,
-    fontWeight: "bold",
-  }));
+    const LowerRow = styled(Box)({
+      display: "flex",
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "flex-end",
+    });
 
-  // const ImportantButton =
+    return (
+      <Wrapper>
+        <UpperRow>
+          <ButtonImportantOutlined text="Become a host" />
+          <ButtonImportantOutlined text="Sign Up" />
+          <ButtonImportantOutlined text="Log In" />
+        </UpperRow>
+        <LowerRow>
+          <Button variant="text">How it works?</Button>
+        </LowerRow>
+      </Wrapper>
+    );
+  };
 
   return (
     <AppBar>
-      <TwoRowContainer maxWidth="lg">
+      <Container maxWidth="lg">
         <Toolbar variant="dense">
-          <SearchField />
+          <Search />
           <GrowingFiller />
-          <Button variant="outlined">Become a host</Button>
-          <Button variant="outlined">Sign Up</Button>
-          <Button variant="outlined">Log In</Button>
+          <RightControls />
         </Toolbar>
-        <Toolbar variant="dense">
-          <SearchButtonsContainer>
-            <MostImportantButton variant="contained">When</MostImportantButton>
-            <MostImportantButton variant="contained">Guests</MostImportantButton>
-            <MostImportantButton variant="contained">Price</MostImportantButton>
-          </SearchButtonsContainer>
-          <GrowingFiller />
-          <Button>How does it work?</Button>
-        </Toolbar>
-      </TwoRowContainer>
+      </Container>
     </AppBar>
   );
 };
